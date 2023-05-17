@@ -28,25 +28,18 @@ $ python3 main.py
 <img width="1087" alt="image" src="https://github.com/Mbaoma/SCA-Cloud-Bootcamp-4/assets/49791498/43becad4-76c9-4187-81db-cb4bdcaf7adc">
 
 ### Create an Azure Container Registry (ACR) using Azure Resource Manager Template (ARM)
-- Head over to your Azure Portal to use the CLI or log into your Azure account on your terminal.
+- Run the scripts in the ```infrastructure``` folder.
 ```bash
+$ cd terraform
 $ az login
-# Create a resource group
-$ az group create --name myapp-rg --location eastus
+$ terraform init
+$ terraform fmt
+$ terraform validate
+$ terraform plan
+$ terraform apply
+```
 
-# Create a container registry
-$ az acr create --resource-group myapp-rg --name myContainerRegistry --sku Basic
-
-# Create a Kubernetes cluster
-$ az aks create \
-    --resource-group myapp-rg \
-    --name myapp \
-    --node-count 1 \
-    --enable-addons monitoring \
-    --generate-ssh-keys
-```    
-
-<img width="1113" alt="image" src="https://github.com/Mbaoma/AKS-Demo/assets/49791498/5b0f4ed9-a5e2-48e2-8558-1a2dfa9ee58b">
+<img width="1138" alt="image" src="https://github.com/Mbaoma/SCA-Cloud-Bootcamp-4/assets/49791498/faba63a3-1576-4fd5-b803-c458f2695a31">
 
 - [Create](https://learn.microsoft.com/en-us/azure/devops/pipelines/library/connect-to-azure#create-an-azure-resource-manager-service-connection-using-automated-security) an Azure Resource Manager service connection.
 
@@ -70,3 +63,6 @@ $ docker run -p 5500:5500 <docker-hub-username>/<image-name>
 <img width="909" alt="image" src="https://github.com/Mbaoma/AKS-Demo/assets/49791498/578c85d2-d3dd-4755-96bc-2fe99f62c978">
 
 <img width="1043" alt="image" src="https://github.com/Mbaoma/AKS-Demo/assets/49791498/ba5d030d-55d3-4e50-8761-544a64be12cf">
+
+## Architecture Diagram
+<img width="587" alt="image" src="https://github.com/Mbaoma/SCA-Cloud-Bootcamp-4/assets/49791498/fed86ed4-6431-4ead-857f-1ef05c04580e">

@@ -2,3 +2,4 @@ venv
 .terraform.lock.hcl
 .terraform.tfstate.lock.info
 .terraform*
+infrastructure/terraform.tfstate.backup

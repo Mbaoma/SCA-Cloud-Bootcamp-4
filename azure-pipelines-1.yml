@@ -13,6 +13,10 @@ steps:
   inputs:
     command: 'build'
     Dockerfile: 'Dockerfile'
+- task: CopyFiles@2
+  inputs:
+   contents: '_buildOutput/**'
+   targetFolder: $(Build.ArtifactStagingDirectory)
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'

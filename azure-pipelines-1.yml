@@ -13,6 +13,7 @@ steps:
   inputs:
     command: 'build'
     Dockerfile: 'Dockerfile'
+    
 - task: CopyFiles@2
   inputs:
    contents: '_buildOutput/**'

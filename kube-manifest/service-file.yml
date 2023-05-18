@@ -16,7 +16,7 @@ spec:
         "kubernetes.io/os": linux
       containers:
         - name: git-app
-          image: flyingr3gistry.azurecr.io/app #your-acr/random-name
+          image: flyingr3gistry.azurecr.io/app #your-acr/image-name
           resources:
             limits:
               cpu: 100m
@@ -26,3 +26,6 @@ spec:
               memory: 128Mi
           ports:
             - containerPort: 5500
+
+
+            # PAT - hi6rwanhlhlqy73mdjtnvowypovsfmcfwl4zz27koh7nr7ii2oza

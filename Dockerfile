@@ -1,9 +1,7 @@
 # our base image
 FROM python:3.12-rc-slim-buster
 
-# Install python and pip
-# RUN apk add --update py2-pip
-
+WORKDIR /app
 # upgrade pip
 RUN python -m pip install --upgrade pip
 

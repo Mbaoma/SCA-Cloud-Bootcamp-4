@@ -86,4 +86,4 @@ $ az acr repository show-tags --name <ACRname> --repository <repo> --output tabl
 
 ### Create ARM service connection
 - [Guide](https://learn.microsoft.com/en-gb/training/modules/deploy-kubernetes/3-set-up-environment)
-
+- [Guide](https://kristhecodingunicorn.com/techtips/ado_sa_error/)

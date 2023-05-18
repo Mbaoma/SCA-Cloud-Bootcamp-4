@@ -1,0 +1,20 @@
+# Starter pipeline
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: ContainerBuild@0
+  inputs:
+    dockerRegistryServiceConnection: 'flyingr3gistry'
+    Dockerfile: 'Dockerfile'
+- task: KubernetesManifest@1
+  inputs:
+    action: 'deploy'
+    connectionType: 'azureResourceManager'
+    azureSubscriptionConnection: 'resourceMange'
+    azureResourceGroup: 'limpingThropies'
+    kubernetesCluster: 'flying-fortress-cluster'
+    manifests: '1'

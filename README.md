@@ -1,9 +1,12 @@
 # SCA-Cloud-Bootcamp-4
-This is my final project submission for the She Code Africa Cloud School Bootcamp (Cohort 4). My topic is on Containers & Kubernetes. I will deploy a web app on an Azure managed Kubernetes service (AKS) via Azure Pipelines (CI/CD).
+This is my final project submission for the She Code Africa Cloud School Bootcamp (Cohort 4). My topic is on Containers & Kubernetes. 
+
+I created the infrastructure (Azure managed Kubernetes service and Container Registry) using Terraform, then I deployed a web app on AKS via Azure Pipelines (CI/CD).
 
 Every time I change my code, the image is pushed to my Azure Container Registry, and the manifests are then deployed to my AKS cluster.
 
 ## Architectural Diagram
+<img width="587" alt="image" src="https://github.com/Mbaoma/SCA-Cloud-Bootcamp-4/assets/49791498/fed86ed4-6431-4ead-857f-1ef05c04580e">
 
 ## Setting Up the app on your local computer
 The application fetches and displays a GitHub user's profile. It calls the Github API, to display the profile of any username typed in the search box. 
@@ -27,7 +30,7 @@ $ python3 main.py
 
 <img width="1087" alt="image" src="https://github.com/Mbaoma/SCA-Cloud-Bootcamp-4/assets/49791498/43becad4-76c9-4187-81db-cb4bdcaf7adc">
 
-### Create an Azure Container Registry (ACR) using Azure Resource Manager Template (ARM)
+### Create an Azure Container Registry (ACR) & Azure Kubernetes Service (AKS) using Terraform
 - Run the scripts in the ```infrastructure``` folder.
 ```bash
 $ cd terraform
@@ -64,5 +67,23 @@ $ docker run -p 5500:5500 <docker-hub-username>/<image-name>
 
 <img width="1043" alt="image" src="https://github.com/Mbaoma/AKS-Demo/assets/49791498/ba5d030d-55d3-4e50-8761-544a64be12cf">
 
-## Architecture Diagram
-<img width="587" alt="image" src="https://github.com/Mbaoma/SCA-Cloud-Bootcamp-4/assets/49791498/fed86ed4-6431-4ead-857f-1ef05c04580e">
+- Push the image to ACR
+```bash
+$ az acr login --name <acrName>
+$ docker tag docker-image:tag <acrLoginServer>/image-name:tag
+$ docker images
+$ docker push <acrLoginServer>/image-name:tag
+```
+
+- Get your image name and tag
+```bash
+$ az acr repository list --name <ACRname>    
+$ az acr repository show-tags --name <ACRname> --repository <repo> --output table
+```
+
+## Setup Azure Pipeline (to deploy to AKS)
+- Create Service principal for ACR
+
+### Create ARM service connection
+- [Guide](https://learn.microsoft.com/en-gb/training/modules/deploy-kubernetes/3-set-up-environment)
+

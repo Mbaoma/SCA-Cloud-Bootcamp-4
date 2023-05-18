@@ -81,8 +81,21 @@ $ az acr repository list --name <ACRname>
 $ az acr repository show-tags --name <ACRname> --repository <repo> --output table
 ```
 
-## Setup Azure Pipeline (to deploy to AKS)
-- Create Service principal for ACR
+## Setup Azure Pipeline 
+
+### Create a default Agent pool
+- [Guide](https://learn.microsoft.com/en-us/azure/devops/pipelines/agents/pools-queues?view=azure-devops&tabs=yaml%2Cbrowser)
+
+### CI
+- Builds the Docker image and saves it as an artifact. Run the command below (to start the agent pool) before making a push to GitHub.
+
+```bash
+$ ./run.sh 
+```
+
+### CD
+- Deploys the artifact gotten from the CI on AKS cluster.
+
 
 ### Create ARM service connection
 - [Guide](https://learn.microsoft.com/en-gb/training/modules/deploy-kubernetes/3-set-up-environment)

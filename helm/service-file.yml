@@ -12,20 +12,29 @@ spec:
       labels:
         app: git-app
     spec:
-      nodeSelector:
-        "kubernetes.io/os": linux
+      type: NodePort
+      ports:
+        - port: 5500
+          targetPort: 5500
+      selector: git-app
       containers:
-        - name: git-app
-          image: flyingr3gistry.azurecr.io/app #your-acr/image-name
-          resources:
-            limits:
-              cpu: 100m
-              memory: 128Mi
-            requests:
-              cpu: 100m
-              memory: 128Mi
-          ports:
-            - containerPort: 5500
+      - name: git-app
+      
+   
+            # - containerPort: 5500
+      # nodeSelector:
+      #   "kubernetes.io/os": linux
+      # containers:
+      #   - name: git-app
+      #     image: flyingr3gistry.azurecr.io/app #your-acr/image-name
+      #     resources:
+      #       limits:
+      #         cpu: 100m
+      #         memory: 128Mi
+      #       requests:
+      #         cpu: 100m
+      #         memory: 128Mi
+          
 
 
         

@@ -9,4 +9,4 @@ spec:
       targetPort: 5500
       protocol: TCP
   selector:
-    app: gitapp   
+    app: gitapp

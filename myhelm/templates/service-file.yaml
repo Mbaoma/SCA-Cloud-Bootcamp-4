@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: gitapp
-        image: $(Build.ArtifactStagingDirectory)/drop/mbaoma/git-app
+        image: $(Build.ArtifactStagingDirectory)/drop/gitapp:$(Build.BuildId)
         ports:
         - containerPort: 5500

@@ -93,7 +93,8 @@ $ az acr repository show-tags --name <ACRname> --repository <repo> --output tabl
 $ ./run.sh 
 ```
 
--createrepo
+zip folder (.tar), create index.yaml
+-create repo
 - add helm chart to repo
  helm repo add myhelm https://synth3tic9st0rage.blob.core.windows.net/stack/         
 "myhelm" has been added to your repositories

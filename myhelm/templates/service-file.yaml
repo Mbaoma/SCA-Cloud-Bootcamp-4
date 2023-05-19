@@ -1,40 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: git-app
+  name: gitapp
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: git-app
+      app: gitapp
   template:
     metadata:
       labels:
-        app: git-app
+        app: gitapp
     spec:
-      type: NodePort
-      ports:
-        - port: 5500
-          targetPort: 5500
-      selector: git-app
       containers:
-      - name: git-app
-      
-   
-            # - containerPort: 5500
-      # nodeSelector:
-      #   "kubernetes.io/os": linux
-      # containers:
-      #   - name: git-app
-      #     image: flyingr3gistry.azurecr.io/app #your-acr/image-name
-      #     resources:
-      #       limits:
-      #         cpu: 100m
-      #         memory: 128Mi
-      #       requests:
-      #         cpu: 100m
-      #         memory: 128Mi
-          
-
-
-        
+      - name: gitapp
+        image: mbaoma/git-app
+        ports:
+        - containerPort: 5500

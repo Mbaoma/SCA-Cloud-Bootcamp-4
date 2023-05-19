@@ -95,6 +95,12 @@ $ ./run.sh
 
 -createrepo
 - add helm chart to repo
+ helm repo add myhelm https://synth3tic9st0rage.blob.core.windows.net/stack/         
+"myhelm" has been added to your repositories
+helm repo update - fetch chart information
+verify chart is available - helm search repo <chart-name>
+
+
 ### CD
 - Deploys the artifact gotten from the CI on AKS cluster.
 

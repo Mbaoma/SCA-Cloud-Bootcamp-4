@@ -58,7 +58,13 @@ $ terraform apply
 $ ./run.sh 
 ```
 
-zip folder (.tar), create index.yaml
+zip folder (.tar), 
+create index.yaml
+$ cd myhelm
+$ helm repo index .
+
+for every change  made to the config, push the index and zip to storage account
+
 -create repo
 - add helm chart to repo
  helm repo add myhelm https://synth3tic9st0rage.blob.core.windows.net/stack/         

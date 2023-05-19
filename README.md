@@ -1,9 +1,9 @@
 # SCA-Cloud-Bootcamp-4
 This is my final project submission for the She Code Africa Cloud School Bootcamp (Cohort 4). My topic is on Containers & Kubernetes. 
 
-I created the infrastructure (Azure managed Kubernetes service and Container Registry) using Terraform, then I deployed a web app on AKS via Azure Pipelines (CI/CD).
+I created the infrastructure (Azure managed Kubernetes service, storage account) using Terraform, then I deployed a web app on AKS via Azure Pipelines (CI/CD).
 
-Every time I change my code, the image is pushed to my Azure Container Registry, and the manifests are then deployed to my AKS cluster.
+Every time I change my code, the image is built and stored as a build artifact, and then deployed to my AKS cluster.
 
 ## Architectural Diagram
 <img width="537" alt="Screenshot 2023-05-19 at 06 54 02" src="https://github.com/Mbaoma/SCA-Cloud-Bootcamp-4/assets/49791498/90c9a66b-3888-4b11-939d-70a787ce57b8">
@@ -30,7 +30,7 @@ $ python3 main.py
 
 <img width="1087" alt="image" src="https://github.com/Mbaoma/SCA-Cloud-Bootcamp-4/assets/49791498/43becad4-76c9-4187-81db-cb4bdcaf7adc">
 
-### Create an Azure Container Registry (ACR) & Azure Kubernetes Service (AKS) using Terraform
+### Create infrastructure using Terraform
 - Run the scripts in the ```infrastructure``` folder.
 ```bash
 $ cd terraform
@@ -45,41 +45,6 @@ $ terraform apply
 <img width="1138" alt="image" src="https://github.com/Mbaoma/SCA-Cloud-Bootcamp-4/assets/49791498/faba63a3-1576-4fd5-b803-c458f2695a31">
 
 - [Create](https://learn.microsoft.com/en-us/azure/devops/pipelines/library/connect-to-azure#create-an-azure-resource-manager-service-connection-using-automated-security) an Azure Resource Manager service connection.
-
-## Create the Docker image
--  Build the image 
-```docker
-$ docker login
-$ docker build -t <docker-hub-username>/<image-name> .
-```
-
-- Push the image to Docker Hub
-```docker
-$ docker push <docker-hub-username>/<image-name>
-```
-
-- Run the image (the image will be run as a container)
-```docker
-$ docker run -p 5500:5500 <docker-hub-username>/<image-name>
-```
-
-<img width="909" alt="image" src="https://github.com/Mbaoma/AKS-Demo/assets/49791498/578c85d2-d3dd-4755-96bc-2fe99f62c978">
-
-<img width="1043" alt="image" src="https://github.com/Mbaoma/AKS-Demo/assets/49791498/ba5d030d-55d3-4e50-8761-544a64be12cf">
-
-- Push the image to ACR
-```bash
-$ az acr login --name <acrName>
-$ docker tag docker-image:tag <acrLoginServer>/image-name:tag
-$ docker images
-$ docker push <acrLoginServer>/image-name:tag
-```
-
-- Get your image name and tag
-```bash
-$ az acr repository list --name <ACRname>    
-$ az acr repository show-tags --name <ACRname> --repository <repo> --output table
-```
 
 ## Setup Azure Pipeline 
 

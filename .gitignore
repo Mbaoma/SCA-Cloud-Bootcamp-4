@@ -4,3 +4,4 @@ venv
 .terraform*
 infrastructure/terraform.tfstate.backup
 helm/secret.yml
+myhelm-0.0.0.tgz

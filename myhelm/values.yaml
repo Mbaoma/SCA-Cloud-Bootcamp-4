@@ -22,7 +22,7 @@ deployment:
     spec:
       containers:
         - name: gitapp
-          image: $(Build.ArtifactStagingDirectory)/drop/gitapp:$(Build.BuildId)
+          image: mbaoma/git-app:latest
           ports:
             - containerPort: 5500
           resources:

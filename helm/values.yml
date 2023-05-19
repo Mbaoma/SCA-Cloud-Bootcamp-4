@@ -1,19 +1,66 @@
-service:
-   type: NodePort 
-   port: 5500
+# service:
+#    type: NodePort 
+#    port: 5500
 
-resources: 
-  # We usually recommend not to specify default resources and to leave this as a conscious
-  # choice for the user. This also increases chances charts run on environments with little
-  # resources, such as Minikube. If you do want to specify resources, uncomment the following
-  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+# resources: 
+#   # We usually recommend not to specify default resources and to leave this as a conscious
+#   # choice for the user. This also increases chances charts run on environments with little
+#   # resources, such as Minikube. If you do want to specify resources, uncomment the following
+#   # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+#   limits:
+#      cpu: 100m
+#      memory: 128Mi
+#   requests:
+#      cpu: 100m
+#      memory: 128Mi
+
+# secret:
+#   name: default-token
+#   namespace: default
+
+# service:
+#   type: NodePort
+#   port: 5500
+
+resources:
   limits:
-     cpu: 100m
-     memory: 128Mi
+    cpu: 100m
+    memory: 128Mi
   requests:
-     cpu: 100m
-     memory: 128Mi
+    cpu: 100m
+    memory: 128Mi
 
 secret:
   name: default-token
   namespace: default
+
+deployment:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: git-app
+  template:
+    metadata:
+      labels:
+        app: git-app
+    spec:
+      containers:
+        - name: git-app
+          ports:
+            - containerPort: 5500
+          resources:
+            limits:
+              cpu: 100m
+              memory: 128Mi
+            requests:
+              cpu: 100m
+              memory: 128Mi
+
+service:
+  name: git-app
+  type: LoadBalancer
+  ports:
+    - port: 5500
+      targetPort: 5500
+  selector:
+    app: git-app

@@ -87,7 +87,7 @@ $ az acr repository show-tags --name <ACRname> --repository <repo> --output tabl
 - [Guide](https://learn.microsoft.com/en-us/azure/devops/pipelines/agents/pools-queues?view=azure-devops&tabs=yaml%2Cbrowser)
 
 ### CI
-- Builds the Docker image and saves it as an artifact. Run the command below (to start the agent pool) before making a push to GitHub.
+- Builds the Docker image and saves it as an artifact. Run the command below (to start the agent pool) before making a push to GitHub. EnsureDocker desktop is running in the backgrouund.
 
 ```bash
 $ ./run.sh 

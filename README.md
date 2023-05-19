@@ -6,7 +6,7 @@ I created the infrastructure (Azure managed Kubernetes service and Container Reg
 Every time I change my code, the image is pushed to my Azure Container Registry, and the manifests are then deployed to my AKS cluster.
 
 ## Architectural Diagram
-<img width="587" alt="image" src="https://github.com/Mbaoma/SCA-Cloud-Bootcamp-4/assets/49791498/fed86ed4-6431-4ead-857f-1ef05c04580e">
+<img width="537" alt="Screenshot 2023-05-19 at 06 54 02" src="https://github.com/Mbaoma/SCA-Cloud-Bootcamp-4/assets/49791498/90c9a66b-3888-4b11-939d-70a787ce57b8">
 
 ## Setting Up the app on your local computer
 The application fetches and displays a GitHub user's profile. It calls the Github API, to display the profile of any username typed in the search box. 
@@ -93,6 +93,8 @@ $ az acr repository show-tags --name <ACRname> --repository <repo> --output tabl
 $ ./run.sh 
 ```
 
+-createrepo
+- add helm chart to repo
 ### CD
 - Deploys the artifact gotten from the CI on AKS cluster.
 

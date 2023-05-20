@@ -70,6 +70,13 @@ I did this because I had to request for ```free parallelism``` and it will take 
 ```bash
 $ ./run.sh 
 ```
+
+- Connect your GitHub Repo to Azure DevOps
+
+<img width="1117" alt="Screenshot 2023-05-18 at 13 30 25" src="https://github.com/Mbaoma/SCA-Cloud-Bootcamp-4/assets/49791498/77ce3371-28f6-4577-8b6c-c17fe69e67db">
+
+<img width="1117" alt="Screenshot 2023-05-18 at 13 33 31" src="https://github.com/Mbaoma/SCA-Cloud-Bootcamp-4/assets/49791498/34a71265-b408-4b86-af08-c8ab0ab481da">
+
 - Configuring my CI pipeline: start with a simple workflow option and add extra configuration as needed.
 
 <img width="1300" alt="image" src="https://github.com/Mbaoma/SCA-Cloud-Bootcamp-4/assets/49791498/852660b5-ebd2-438d-83c7-c7aea9321588">
@@ -107,7 +114,11 @@ $ helm repo update
 ```
 
 - Configuring the CD pipeline
+**Stage 1**
 
+<img width="1140" alt="Screenshot 2023-05-18 at 18 50 48" src="https://github.com/Mbaoma/SCA-Cloud-Bootcamp-4/assets/49791498/f9d9b1bd-4110-4976-bd63-b05a13318d11">
+
+**Stage 2**
 <img width="1300" alt="image" src="https://github.com/Mbaoma/SCA-Cloud-Bootcamp-4/assets/49791498/5606e622-585f-48b7-a3aa-69c6f094847d">
 
 - Setting the trigger
@@ -123,4 +134,4 @@ $ kubectl get services
 
 <img width="1300" alt="Screenshot 2023-05-20 at 05 15 33" src="https://github.com/Mbaoma/SCA-Cloud-Bootcamp-4/assets/49791498/9a21cc40-e7af-4c3d-83a8-d11bf18f5be6">
 
-```http://52.189.27.203:5500/```
+Live link: ```http://52.189.27.203:5500/```

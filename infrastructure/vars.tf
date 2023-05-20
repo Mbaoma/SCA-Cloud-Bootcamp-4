@@ -50,26 +50,7 @@ variable "np-identity" {
   default = "SystemAssigned"
 }
 
-variable "acr-name" {
-  default = "flyingr3gistry"
-}
 
-variable "registry-sku" {
-  default = "Premium"
-}
-
-variable "admin-enabled" {
-  default = false
-}
-
-variable "zone-redundancy-enabled" {
-  default = true
-}
-
-variable "georeplications-registry1" {
-  default = "North Europe"
-}
-
-variable "georeplications-registry2" {
-  default = "East US"
-}
+# variable "web-url" {
+#   default = "https://sca-webapp.azurewebsites.net"
+# }

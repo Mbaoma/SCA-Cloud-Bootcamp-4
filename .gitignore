@@ -3,5 +3,7 @@ venv
 .terraform.tfstate.lock.info
 .terraform*
 infrastructure/terraform.tfstate.backup
-helm/secret.yml
-myhelm-0.0.0.tgz
+myhelm/template/secret.yml
+myhelm/myhelm-0.0.0.tgz
+myhelm/.myhelm-0.0.0.tgz.icloud
+myhelm/index.yaml

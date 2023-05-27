@@ -8,7 +8,7 @@ I created the infrastructure:
 Every time I make a push to my git repo, the image is re-built, stored as a build artifact, and then deployed to my AKS cluster.
 
 ## Architectural Diagram
-<img width="537" alt="Screenshot 2023-05-19 at 06 54 02" src="https://github.com/Mbaoma/SCA-Cloud-Bootcamp-4/assets/49791498/90c9a66b-3888-4b11-939d-70a787ce57b8">
+<img width="545" alt="image" src="https://github.com/Mbaoma/SCA-Cloud-Bootcamp-4/assets/49791498/ab3a62a9-adae-47c6-95a6-4ae48b7ceb30">
 
 ## Setting Up the app on my local computer
 The application fetches and displays a GitHub user's profile. It calls the Github API, to display the profile of any username typed in the search box. 
